@@ -1,9 +1,19 @@
 import React from "react";
-import * as C from "./styles";
+import "./styles.css"
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 
-const Input = ({ type, placeholder, value, onChange, theme }) => {
+const Input = ({ label, type, placeholder, value, onChange, error }) => {
   return (
-    <C.inputDark value={value} placeholder={placeholder} onChange={onChange} type={type} />
+    <TextField
+      id= {error ? "outlined-basic" : "outlined-error"}
+      type={type}
+      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
+      label={label}
+      variant="outlined"
+    />
   );
 };
 

@@ -27,6 +27,9 @@ export const Label = styled.label`
   font-size: 18px;
   font-weight: 600;
   color: #676767;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 `;
 
 export const LabelSignup = styled.label`

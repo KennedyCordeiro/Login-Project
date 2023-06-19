@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import input from "../../components/Input";
+import Myinput from "../../components/Input";
 import Button from "../../components/Button";
 import * as C from "./signin.styles";
 import { Link, useNavigate } from "react-router-dom";
@@ -27,30 +27,33 @@ const Signin = () => {
 
     navigate("/home");
   };
-  
+
   return (
     <C.Container>
       <C.Label>Kentech Login</C.Label>
       <C.Content>
-        <input
+        <Myinput
+          error={error}
+          label={"Email"}
           type="email"
           placeholder="Digite seu email"
           value={email}
           onChange={(e) => [setEmail(e.target.value), setError("")]}
         />
-        <input
+        <Myinput
+          label={"Senha"}
           type="password"
           placeholder="Digite sua senha"
           value={password}
           onChange={(e) => [setPassword(e.target.value), setError("")]}
         />
         <C.labelError>{error}</C.labelError>
-        <Button Text="Entrar"></Button>
+        <Button Text="Entrar" onClick={handleLogin}></Button>
         <C.LabelSignup>
           Criar conta{" "}
-          <C.strong>
+          <C.Strong>
             <Link to="/signup">&nbsp; Registrar</Link>
-          </C.strong>
+          </C.Strong>
         </C.LabelSignup>
       </C.Content>
     </C.Container>

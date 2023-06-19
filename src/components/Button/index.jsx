@@ -1,11 +1,12 @@
 import React from 'react'
 import * as C from "./styles"
+import LoadingButton from '@mui/lab/LoadingButton';
 
 const Button = ({Text, onClick, Type = "button"}) => {
   return (
-    <C.Button type={Type} onClick={onClick}>
+    <LoadingButton type={Type} onClick={onClick}>
       {Text}
-    </C.Button>
+    </LoadingButton>
     )
 }
 
