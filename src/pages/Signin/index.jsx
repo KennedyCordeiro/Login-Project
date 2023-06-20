@@ -33,16 +33,16 @@ const Signin = () => {
       <C.Label>Kentech Login</C.Label>
       <C.Content>
         <Myinput
+          type={true}
           error={error}
           label={"Email"}
-          type="email"
           placeholder="Digite seu email"
           value={email}
           onChange={(e) => [setEmail(e.target.value), setError("")]}
         />
         <Myinput
           label={"Senha"}
-          type="password"
+          type={false}
           placeholder="Digite sua senha"
           value={password}
           onChange={(e) => [setPassword(e.target.value), setError("")]}
