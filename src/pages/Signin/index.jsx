@@ -4,6 +4,7 @@ import Button from "../../components/Button";
 import * as C from "./signin.styles";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import {ReactComponent as Background} from "../../Images/back2.svg";
 
 const Signin = () => {
   const { signin } = useAuth();
@@ -29,7 +30,7 @@ const Signin = () => {
   };
 
   return (
-    <C.Container>
+    <C.Container >
       <C.Label>Kentech Login</C.Label>
       <C.Content>
         <Myinput

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Background} from "../../Images/back.png";
 
 export const Container = styled.div`
   display: flex;
@@ -7,6 +8,8 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 10px;
   height: 100vh;
+  background-image: url("../../Images/back.png");
+
 `;
 
 export const Content = styled.div`
