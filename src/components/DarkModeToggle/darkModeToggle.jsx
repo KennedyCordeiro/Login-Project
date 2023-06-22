@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "./styles.css";
 
-export const DarkModeToggle = () => {
+const DarkModeToggle = () => {
   const handleToggled = () => {
     document.body.classList.toggle("dark");
 
@@ -23,3 +23,5 @@ export const DarkModeToggle = () => {
     </label>
   );
 };
+
+export default DarkModeToggle;

@@ -8,31 +8,45 @@ import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import Box from "@mui/material/Box";
 
-const Input = ({ label, type, placeholder, value, onChange, error }) => {
+const Input = ({
+  label,
+  type,
+  placeholder,
+  value,
+  onChange,
+  error,
+  errorMessage,
+}) => {
   const [showPassword, setShowPassword] = React.useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleInput = () => {
     if (type) {
-       return (
-        <div>
+      return (
+        <Box>
           <TextField
-            id={error ? "outlined-basic" : "outlined-error"}
+            id={ error ? "outlined-error-helper-text" : "outlined-basic"}
             type="text"
             placeholder={placeholder}
             value={value}
             onChange={onChange}
             label={label}
             variant="outlined"
+            helperText={errorMessage}
           />
-        </div>
+        </Box>
       );
     } else {
       return (
         <FormControl variant="outlined">
-          <InputLabel value={value} htmlFor="outlined-adornment-password">
+          <InputLabel
+            placeholder={placeholder}
+            value={value}
+            htmlFor="outlined-adornment-password"
+          >
             Senha
           </InputLabel>
           <OutlinedInput
@@ -44,7 +58,7 @@ const Input = ({ label, type, placeholder, value, onChange, error }) => {
                 style={{ justifyContent: "end", width: "17%" }}
               >
                 <IconButton
-                  style={{ justifyContent: "end",width: "100%" }}
+                  style={{ justifyContent: "end", width: "100%" }}
                   aria-label="toggle password visibility"
                   onClick={handleClickShowPassword}
                   edge="end"

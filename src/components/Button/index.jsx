@@ -5,7 +5,6 @@ import LoadingButton from '@mui/material/Button';
 const Button = ({Text, onClick, Type = "button"}) => {
   return (
     <LoadingButton variant="contained">Entrar</LoadingButton>
-
     )
 }
 

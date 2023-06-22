@@ -4,7 +4,8 @@ import Button from "../../components/Button";
 import * as C from "./signin.styles";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import {ReactComponent as Background} from "../../Images/back2.svg";
+import DarkModeToggle from "../../components/DarkModeToggle/darkModeToggle";
+import LoadingButton from "@mui/material/Button";
 
 const Signin = () => {
   const { signin } = useAuth();
@@ -12,11 +13,13 @@ const Signin = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleLogin = () => {
     if (!email | !password) {
-      setError("Preencha todos os campos");
+      setErrorMessage("Preencha todos os campos");
+      setError(true);
       return;
     }
     const res = signin(email, password);
@@ -30,9 +33,10 @@ const Signin = () => {
   };
 
   return (
-    <C.Container >
-      <C.Label>Kentech Login</C.Label>
+    <C.Container>
       <C.Content>
+        <C.Label>Bem vindo(a) !</C.Label>
+        <C.Label>Vamos começar nossa jornada?</C.Label>
         <Myinput
           type={true}
           error={error}
@@ -40,6 +44,7 @@ const Signin = () => {
           placeholder="Digite seu email"
           value={email}
           onChange={(e) => [setEmail(e.target.value), setError("")]}
+          errorMessage={errorMessage}
         />
         <Myinput
           label={"Senha"}
@@ -49,14 +54,19 @@ const Signin = () => {
           onChange={(e) => [setPassword(e.target.value), setError("")]}
         />
         <C.labelError>{error}</C.labelError>
-        <Button Text="Entrar" onClick={handleLogin}></Button>
+        <LoadingButton variant="contained" onClick={handleLogin}>
+          Entrar
+        </LoadingButton>
+        <C.ColorButton>tex</C.ColorButton>
         <C.LabelSignup>
-          Criar conta{" "}
+          Ainda não tem conta ?{" "}
           <C.Strong>
             <Link to="/signup">&nbsp; Registrar</Link>
           </C.Strong>
         </C.LabelSignup>
       </C.Content>
+      <C.ContainerHeader>
+      </C.ContainerHeader>
     </C.Container>
   );
 };
