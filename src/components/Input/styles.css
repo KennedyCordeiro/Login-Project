@@ -6,3 +6,7 @@
 p {
   color: rgb(228, 34, 34) !important  ;
 }
+
+.text-input{
+  margin-bottom: 20px;
+}

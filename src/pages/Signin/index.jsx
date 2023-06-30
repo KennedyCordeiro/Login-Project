@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import Myinput from "../../components/Input";
-import Button from "../../components/Button";
 import * as C from "./signin.styles";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import DarkModeToggle from "../../components/DarkModeToggle/darkModeToggle";
-import LoadingButton from "@mui/material/Button";
+
 
 const Signin = () => {
+
   const { signin } = useAuth();
   const navigate = useNavigate();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
@@ -32,6 +31,10 @@ const Signin = () => {
     navigate("/home");
   };
 
+  const handleButtonClick = () => {
+    navigate('/signup');
+  };
+  
   return (
     <C.Container>
       <C.Content>
@@ -45,8 +48,6 @@ const Signin = () => {
             value={email}
             onChange={(e) => [setEmail(e.target.value), setError("")]}
             errorMessage={errorMessage}
-            style={{marginBottom: "20px"}}
-         
           />
           <Myinput
             label={"Senha"}
@@ -56,18 +57,18 @@ const Signin = () => {
             onChange={(e) => [setPassword(e.target.value), setError("")]}
           />
         </C.DivInput>
-        <LoadingButton
-          style={{ borderRadius: "10px 10px 10px 10px", width: "90%" }}
+        <C.SigninButton
+          style={{ borderRadius: "10px 10px 10px 10px", width: "80%" }}
           variant="contained"
           onClick={handleLogin}
         >
           Entrar
-        </LoadingButton>
-        <C.ColorButton Link to="/signup">
+        </C.SigninButton>
+        <C.SignupButton onClick={handleButtonClick}>
           Cadastrar
-        </C.ColorButton>
+        </C.SignupButton>
 
-        <C.LabelSignup>
+        <C.LabelSignup style={{display: 'flex', justifyContent: 'ce'}}>
           <C.Strong>
             <Link to="/signup">&nbsp; Esqueceu sua senha?</Link>
           </C.Strong>

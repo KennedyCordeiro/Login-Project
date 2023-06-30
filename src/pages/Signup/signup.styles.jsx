@@ -1,6 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import backgroundHeader from "../../Images/header3.svg";
 import LoadingButton from "@mui/material/Button";
+import Input from "../../components/Input";
 
 const fadeIn = keyframes`
   from { 
@@ -18,8 +19,8 @@ export const Container = styled.div`
   flex-direction: initial;
   gap: 10px;
   height: 100vh;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+  font-family: inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 `;
 
 export const Content = styled.div`
@@ -36,19 +37,6 @@ export const Content = styled.div`
   border-radius: 5px;
   padding: 20px;
 `;
-
-export const DivInput = styled.div`
-  width: 90%;
-  padding-bottom: 40px;
-`;
-
-/* export const HeaderContent = styled.div`
-  background-color: #1f0855;
-  height: 300px;
-  border-radius: 0 7px 230px 230px;
-  margin-bottom: 40px;
-  padding: 0 !important;
-`; */
 
 export const ContainerHeader = styled.div`
   display: flex;
@@ -72,9 +60,8 @@ export const ContainerHeader = styled.div`
   float: right;
 `;
 
-
 export const Label = styled.label`
-  font-size: 27px;
+  font-size: 35px;
   margin-bottom: 15px;
   font-weight: 600;
   color: #676767;
@@ -107,35 +94,23 @@ export const Strong = styled.strong`
   }
 `;
 
+export const DivName = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: initial;
+  gap: 30px;
+`;
+
 export const SignupButton = styled(LoadingButton)`
   color: #ffffff !important;
   width: 80%;
   transition: background-color 0.3s ease-in-out;
   border-radius: 10px !important;
   background-color: #1d3557 !important;
-
+  margin-top: 20px !important;
   &:hover {
     animation: fadeIn 0.4s ease-in ;
     background-color: #335c96 !important;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0.5;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-`;
-
-export const SigninButton = styled(LoadingButton)`
-  transition: background-color 0.3s ease-in-out;
-  border-radius: 10px !important;
-  width: 80%;
-
-  &:hover {
-    animation: fadeIn 0.4s ease-in ;
   }
 
   @keyframes fadeIn {
