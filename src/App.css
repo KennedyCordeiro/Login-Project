@@ -6,3 +6,11 @@
   background-position: center top;
   background-size: 110% auto;
 } */
+@font-face {
+  font-family: "Aquos";
+  src: url(./fonts/Aqum.otf);
+}
+
+* {
+  font-family: 'Aquos', sans-serif;
+}

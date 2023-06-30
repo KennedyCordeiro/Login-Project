@@ -1,4 +1,8 @@
 * {
   width: 100%;
-  
+  margin-bottom:20px;
+}
+
+p {
+  color: rgb(228, 34, 34) !important  ;
 }

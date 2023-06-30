@@ -26,9 +26,9 @@ const Input = ({
   const handleInput = () => {
     if (type) {
       return (
-        <Box>
+        <Box className="text-input">
           <TextField
-            id={ error ? "outlined-error-helper-text" : "outlined-basic"}
+            id={error ? "outlined-error-helper-text" : "outlined-basic"}
             type="text"
             placeholder={placeholder}
             value={value}
@@ -41,35 +41,37 @@ const Input = ({
       );
     } else {
       return (
-        <FormControl variant="outlined">
-          <InputLabel
-            placeholder={placeholder}
-            value={value}
-            htmlFor="outlined-adornment-password"
-          >
-            Senha
-          </InputLabel>
-          <OutlinedInput
-            id="outlined-adornment-password"
-            type={showPassword ? "text" : "password"}
-            endAdornment={
-              <InputAdornment
-                position="end"
-                style={{ justifyContent: "end", width: "17%" }}
-              >
-                <IconButton
-                  style={{ justifyContent: "end", width: "100%" }}
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  edge="end"
+        <Box>
+          <FormControl variant="outlined">
+            <InputLabel
+              placeholder={placeholder}
+              value={value}
+              htmlFor="outlined-adornment-password"
+            >
+              Senha
+            </InputLabel>
+            <OutlinedInput
+              id="outlined-adornment-password"
+              type={showPassword ? "text" : "password"}
+              endAdornment={
+                <InputAdornment
+                  position="end"
+                  style={{ justifyContent: "end", width: "17%" }}
                 >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-            label="Password"
-          />
-        </FormControl>
+                  <IconButton
+                    style={{ justifyContent: "end", width: "100%" }}
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    edge="end"
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              }
+              label="Password"
+            />
+          </FormControl>
+        </Box>
       );
     }
   };

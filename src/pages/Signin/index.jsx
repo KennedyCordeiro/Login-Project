@@ -35,38 +35,45 @@ const Signin = () => {
   return (
     <C.Container>
       <C.Content>
-        <C.Label>Bem vindo(a) !</C.Label>
-        <C.Label>Vamos começar nossa jornada?</C.Label>
-        <Myinput
-          type={true}
-          error={error}
-          label={"Email"}
-          placeholder="Digite seu email"
-          value={email}
-          onChange={(e) => [setEmail(e.target.value), setError("")]}
-          errorMessage={errorMessage}
-        />
-        <Myinput
-          label={"Senha"}
-          type={false}
-          placeholder="Digite sua senha"
-          value={password}
-          onChange={(e) => [setPassword(e.target.value), setError("")]}
-        />
-        <C.labelError>{error}</C.labelError>
-        <LoadingButton variant="contained" onClick={handleLogin}>
+        <C.Label>Login</C.Label>
+        <C.DivInput>
+          <Myinput
+            type={true}
+            error={error}
+            label={"Email"}
+            placeholder="Digite seu email"
+            value={email}
+            onChange={(e) => [setEmail(e.target.value), setError("")]}
+            errorMessage={errorMessage}
+            style={{marginBottom: "20px"}}
+         
+          />
+          <Myinput
+            label={"Senha"}
+            type={false}
+            placeholder="Digite sua senha"
+            value={password}
+            onChange={(e) => [setPassword(e.target.value), setError("")]}
+          />
+        </C.DivInput>
+        <LoadingButton
+          style={{ borderRadius: "10px 10px 10px 10px", width: "90%" }}
+          variant="contained"
+          onClick={handleLogin}
+        >
           Entrar
         </LoadingButton>
-        <C.ColorButton>tex</C.ColorButton>
+        <C.ColorButton Link to="/signup">
+          Cadastrar
+        </C.ColorButton>
+
         <C.LabelSignup>
-          Ainda não tem conta ?{" "}
           <C.Strong>
-            <Link to="/signup">&nbsp; Registrar</Link>
+            <Link to="/signup">&nbsp; Esqueceu sua senha?</Link>
           </C.Strong>
         </C.LabelSignup>
       </C.Content>
-      <C.ContainerHeader>
-      </C.ContainerHeader>
+      <C.ContainerHeader></C.ContainerHeader>
     </C.Container>
   );
 };

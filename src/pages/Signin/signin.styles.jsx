@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import backgroundHeader from "../../Images/header3.svg";
 import LoadingButton from "@mui/material/Button";
-import { styledMui } from '@mui/material/styles';
-import { purple } from '@mui/material/colors';
+import { styledMui } from "@mui/material/styles";
+import { purple } from "@mui/material/colors";
 
 export const Container = styled.div`
   display: flex;
@@ -25,9 +25,15 @@ export const Content = styled.div`
   height: 100%;
   box-shadow: 0 1px 30px #0003;
   background-color: #fafafa;
-  max-width: 500px;
+  max-width: 600px;
   border-radius: 5px;
   padding: 20px;
+`;
+
+export const DivInput = styled.div`
+  margin-bottom: 20px;
+  width: 90%;
+  padding-bottom: 40px;
 `;
 
 /* export const HeaderContent = styled.div`
@@ -49,9 +55,10 @@ export const ContainerHeader = styled.div`
     rgba(26, 26, 26, 1),
     rgba(84, 52, 171, 1)
   ); */
-  background-image: url(${backgroundHeader});
+  background-color: #1d3557;
+  /* background-image: url(${backgroundHeader});
   background-size: cover;
-  background-position: center;
+  background-position: center; */
   width: 100%;
   height: 100%;
   color: white;
@@ -66,18 +73,22 @@ export const ImageContent = styled.div`
 `;
 
 export const Label = styled.label`
-  font-size: 20px;
+  font-size: 27px;
+  margin-bottom: 15px;
   font-weight: 600;
   color: #676767;
   justify-content: center;
   align-items: baseline;
   display: flex;
-  font-family: sans-serif;
 `;
 
-export const LabelSignup = styled.label`
+export const LabelSignup = styled.div`
   font-size: 16px;
   color: #676767;
+  padding-top: 35px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 `;
 
 export const labelError = styled.label`
@@ -95,11 +106,11 @@ export const Strong = styled.strong`
 `;
 
 export const ColorButton = styled(LoadingButton)({
-  color: '#2b0707',
-  backgroundColor: '#530053',
-  '&:hover': {
-    backgroundColor: '#ac27ac',
+  color: "#ffffff !important",
+  width: "80%",
+  borderRadius: " 10px 10px 10px 10px !important",
+  backgroundColor: "#1D3557 !important",
+  "&:hover": {
+    backgroundColor: "#335c96 !important",
   },
 });
-
-
