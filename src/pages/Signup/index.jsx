@@ -16,6 +16,25 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  
+  
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const validateForm = () => {
+    const emailRegex = /^.+@.+\..+$/;
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+    const isEmailValid = emailRegex.test(email);
+    const isPasswordValid = passwordRegex.test(password);
+
+    setError(!isEmailValid && !isPasswordValid);
+  };
 
   const handleSignup = () => {
     if (!email | !password | !fullName) {
@@ -48,7 +67,7 @@ const Signup = () => {
             label={"Nome"}
             placeholder="Insira seu nome"
             value={fullName.firstName}
-            onChange={handleInputChange}
+            onChange={handleEmailChange}
             errorMessage={errorMessage}
           />
           <Input
@@ -57,7 +76,7 @@ const Signup = () => {
             label={"Sobrenome"}
             placeholder="Insira seu sobrenome"
             value={fullName.lastName}
-            onChange={handleInputChange}
+            onChange={handlePasswordChange}
             errorMessage={errorMessage}
           />
         </C.DivName>
@@ -67,7 +86,7 @@ const Signup = () => {
           label={"Email"}
           placeholder="Insira seu endereço de email"
           value={email}
-          onChange={(e) => [setEmail(e.target.value), setError("")]}
+          onChange={handleEmailChange}
           errorMessage={errorMessage}
         />
         <Input
@@ -76,10 +95,10 @@ const Signup = () => {
           label={"Senha"}
           placeholder="Insira sua senha"
           value={password}
-          onChange={(e) => [setPassword(e.target.value), setError("")]}
+          onChange={handlePasswordChange}
           errorMessage={errorMessage}
         />
-        <C.SignupButton>Completar cadastro</C.SignupButton>
+        <C.SignupButton disabled={!error}>Efetuar cadastro</C.SignupButton>
       </C.Content>
     </C.Container>
   );

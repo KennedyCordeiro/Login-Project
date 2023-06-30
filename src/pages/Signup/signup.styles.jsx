@@ -62,7 +62,7 @@ export const ContainerHeader = styled.div`
 
 export const Label = styled.label`
   font-size: 35px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   font-weight: 600;
   color: #676767;
   justify-content: center;
@@ -106,7 +106,7 @@ export const SignupButton = styled(LoadingButton)`
   width: 80%;
   transition: background-color 0.3s ease-in-out;
   border-radius: 10px !important;
-  background-color: #1d3557 !important;
+  background-color: #306ec7!important;
   margin-top: 20px !important;
   &:hover {
     animation: fadeIn 0.4s ease-in ;
