@@ -1,12 +1,17 @@
 * {
   width: 100%;
-  margin-bottom:20px;
+  margin-bottom: 20px;
 }
 
+
+.MuiInputBase-root{
+  
+  padding-right: 0 !important;
+}
 p {
   color: rgb(228, 34, 34) !important  ;
 }
 
-.text-input{
+.text-input {
   margin-bottom: 20px;
 }

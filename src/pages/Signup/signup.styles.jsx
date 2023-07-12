@@ -1,7 +1,6 @@
 import styled, { keyframes } from "styled-components";
-import backgroundHeader from "../../Images/header3.svg";
+import backgroundHeader from "../../Images/back.jpg";
 import LoadingButton from "@mui/material/Button";
-import Input from "../../components/Input";
 
 const fadeIn = keyframes`
   from { 
@@ -50,16 +49,19 @@ export const ContainerHeader = styled.div`
     rgba(84, 52, 171, 1)
   ); */
   background-color: #1d3557;
-  /* background-image: url(${backgroundHeader});
+  background-image: url(${backgroundHeader});
   background-size: cover;
-  background-position: center; */
+  background-position: center;
   width: 100%;
   height: 100%;
   color: white;
   //border-radius: 30px 0 0 30px;
   float: right;
 `;
-
+export const TextContainer = styled.div`
+  text-align: center;
+  justify-content: center;
+`;
 export const Label = styled.label`
   font-size: 35px;
   margin-bottom: 30px;
@@ -82,6 +84,7 @@ export const LabelSignup = styled.div`
 export const labelError = styled.label`
   font-size: 14px;
   color: red;
+  margin-left: 35px;
 `;
 
 export const Strong = styled.strong`
@@ -104,12 +107,13 @@ export const DivName = styled.div`
 export const SignupButton = styled(LoadingButton)`
   color: #ffffff !important;
   width: 80%;
+  height: 40px;
   transition: background-color 0.3s ease-in-out;
-  border-radius: 10px !important;
-  background-color: #306ec7!important;
+  border-radius: 40px !important;
+  background-color: #306ec7 !important;
   margin-top: 20px !important;
   &:hover {
-    animation: fadeIn 0.4s ease-in ;
+    animation: fadeIn 0.4s ease-in;
     background-color: #335c96 !important;
   }
 

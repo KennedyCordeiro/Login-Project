@@ -30,7 +30,7 @@ const Input = ({
           <TextField
             id={error ? "outlined-error-helper-text" : "outlined-basic"}
             type="text"
-            placeholder={placeholder}
+            placeholder={value.lenght > 0 ? "" : placeholder}
             value={value}
             onChange={onChange}
             label={label}
@@ -42,35 +42,37 @@ const Input = ({
     } else {
       return (
         <Box>
-          <FormControl variant="outlined">
-            <InputLabel
-              placeholder={placeholder}
-              value={value}
-              htmlFor="outlined-adornment-password"
-            >
-              Senha
-            </InputLabel>
-            <OutlinedInput
-              id="outlined-adornment-password"
-              type={showPassword ? "text" : "password"}
-              endAdornment={
+          <TextField
+            id={error ? "outlined-error-helper-text" : "outlined-basic"}
+            type={showPassword ? "text" : "password"}
+            placeholder={value.lenght > 0 ? "" : placeholder}
+            value={value}
+            onChange={onChange}
+            label={label}
+            variant="outlined"
+            helperText={errorMessage}
+            InputProps={{
+              // <-- This is where the toggle button is added.
+              endAdornment: (
                 <InputAdornment
+                  id="standard-adornment-password"
                   position="end"
-                  style={{ justifyContent: "end", width: "17%" }}
+                  style={{
+                    width: "0",
+                    justifyContent: "end",
+                    marginLeft: "0",
+                  }}
                 >
                   <IconButton
-                    style={{ justifyContent: "end", width: "100%" }}
-                    aria-label="toggle password visibility"
                     onClick={handleClickShowPassword}
-                    edge="end"
+                    style={{ width: "40px", margin: "10px" }}
                   >
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                    {showPassword ? <Visibility /> : <VisibilityOff />}
                   </IconButton>
                 </InputAdornment>
-              }
-              label="Password"
-            />
-          </FormControl>
+              ),
+            }}
+          />
         </Box>
       );
     }

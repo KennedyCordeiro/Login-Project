@@ -37,13 +37,13 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const signup = (email, password) => {
+  const signup = (email, password, userName) => {
     const usersStorage = JSON.parse(localStorage.getItem("users_bd"));
 
     const hasUser = usersStorage?.filter((user) => user.email === email);
 
     if (hasUser?.length) {
-      return "Já tem uma conta com esse E-mail";
+      return "Conta já cadastrada com esse E-mail";
     }
 
     let newUser;

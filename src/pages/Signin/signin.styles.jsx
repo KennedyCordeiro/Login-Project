@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
-import backgroundHeader from "../../Images/header3.svg";
 import LoadingButton from "@mui/material/Button";
+import backgroundHeader from "../../Images/back.jpg";
 
 const fadeIn = keyframes`
   from { 
@@ -31,7 +31,7 @@ export const Content = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: #fafafa;
+  background-color: #ffffff;
   max-width: 600px;
   border-radius: 5px;
   padding: 20px;
@@ -62,9 +62,9 @@ export const ContainerHeader = styled.div`
     rgba(84, 52, 171, 1)
   ); */
   background-color: #1d3557;
-  /* background-image: url(${backgroundHeader});
+  background-image: url(${backgroundHeader});
   background-size: cover;
-  background-position: center; */
+  background-position: center;
   width: 100%;
   height: 100%;
   color: white;

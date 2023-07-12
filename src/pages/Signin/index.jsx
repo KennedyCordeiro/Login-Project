@@ -4,10 +4,9 @@ import * as C from "./signin.styles";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import DarkModeToggle from "../../components/DarkModeToggle/darkModeToggle";
-
+import Logo from "../../Images/logokk.png";
 
 const Signin = () => {
-
   const { signin } = useAuth();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -16,7 +15,7 @@ const Signin = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleLogin = () => {
-    if (!email | !password) {
+    if (!email || !password) {
       setErrorMessage("Preencha todos os campos");
       setError(true);
       return;
@@ -32,12 +31,13 @@ const Signin = () => {
   };
 
   const handleButtonClick = () => {
-    navigate('/signup');
+    navigate("/signup");
   };
-  
+
   return (
     <C.Container>
       <C.Content>
+
         <C.Label>Login</C.Label>
         <C.DivInput>
           <Myinput
@@ -54,7 +54,7 @@ const Signin = () => {
             type={false}
             placeholder="Digite sua senha"
             value={password}
-            onChange={(e) => [setPassword(e.target.value), setError("")]}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </C.DivInput>
         <C.SigninButton
@@ -64,11 +64,9 @@ const Signin = () => {
         >
           Entrar
         </C.SigninButton>
-        <C.SignupButton onClick={handleButtonClick}>
-          Cadastrar
-        </C.SignupButton>
+        <C.SignupButton onClick={handleButtonClick}>Cadastrar</C.SignupButton>
 
-        <C.LabelSignup style={{display: 'flex', justifyContent: 'ce'}}>
+        <C.LabelSignup style={{ display: "flex", justifyContent: "ce" }}>
           <C.Strong>
             <Link to="/signup">&nbsp; Esqueceu sua senha?</Link>
           </C.Strong>
