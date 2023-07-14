@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import DarkModeToggle from "../../components/DarkModeToggle/darkModeToggle";
 import Logo from "../../Images/logoKen.png";
-
+import TestButton from "../../components/Button";
 
 const Signup = () => {
   const makeSignup = useAuth();
@@ -81,68 +81,70 @@ const Signup = () => {
   return (
     <C.Container>
       <C.ContainerHeader>
-        <C.TextContainer>
-        </C.TextContainer>
+        <C.Content>
+          <C.Label>Inscreva-se</C.Label>
+          <C.DivName>
+            <Input
+              type={true}
+              error={error}
+              label={"Nome"}
+              placeholder="Insira seu nome"
+              value={fullName.firstName}
+              onChange={(e) =>
+                setFullName({ ...fullName, firstName: e.target.value })
+              }
+            />
+            <Input
+              type={true}
+              error={error}
+              label={"Sobrenome"}
+              placeholder="Insira seu sobrenome"
+              value={fullName.lastName}
+              onChange={(e) =>
+                setFullName({ ...fullName, lastName: e.target.value })
+              }
+            />
+          </C.DivName>
+          <Input
+            type={true}
+            error={error}
+            label={"Email"}
+            placeholder="Insira seu endereço de email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Input
+            type={false}
+            error={error}
+            label={"Senha"}
+            placeholder="Insira sua senha"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Input
+            type={false}
+            error={error}
+            label={"Confirmar senha"}
+            placeholder="Insira novamente sua senha"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+          <C.labelError>
+            {errorMessage.length > 0 && (
+              <ul>
+                {errorMessage.map((error, index) => (
+                  <li key={index}>{error}</li>
+                ))}
+              </ul>
+            )}
+          </C.labelError>
+          <TestButton Text={"Cadastrar"}></TestButton>
+          <C.TextContainer>
+            Já possui conta?
+            <C.Strong>Login</C.Strong>
+          </C.TextContainer>
+        </C.Content>
       </C.ContainerHeader>
-      <C.Content>
-        <C.Label>Inscreva-se</C.Label>
-        <C.DivName>
-          <Input
-            type={true}
-            error={error}
-            label={"Nome"}
-            placeholder="Insira seu nome"
-            value={fullName.firstName}
-            onChange={(e) =>
-              setFullName({ ...fullName, firstName: e.target.value })
-            }
-          />
-          <Input
-            type={true}
-            error={error}
-            label={"Sobrenome"}
-            placeholder="Insira seu sobrenome"
-            value={fullName.lastName}
-            onChange={(e) =>
-              setFullName({ ...fullName, lastName: e.target.value })
-            }
-          />
-        </C.DivName>
-        <Input
-          type={true}
-          error={error}
-          label={"Email"}
-          placeholder="Insira seu endereço de email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <Input
-          type={false}
-          error={error}
-          label={"Senha"}
-          placeholder="Insira sua senha"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <Input
-          type={false}
-          error={error}
-          label={"Confirmar senha"}
-          placeholder="Insira novamente sua senha"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
-        <C.labelError>
-          {errorMessage.length > 0 && (
-            <ul>
-              {errorMessage.map((error, index) => (
-                <li key={index}>{error}</li>
-              ))}
-            </ul>
-          )}
-        </C.labelError>
-        <C.SignupButton onClick={handleSignup}>Efetuar cadastro</C.SignupButton>
-      </C.Content>
     </C.Container>
   );
 };

@@ -31,7 +31,7 @@ export const Content = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
+  background-color: #e9e9e9;
   max-width: 600px;
   border-radius: 5px;
   padding: 20px;

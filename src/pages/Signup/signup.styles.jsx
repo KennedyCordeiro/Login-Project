@@ -20,6 +20,8 @@ export const Container = styled.div`
   height: 100vh;
   font-family: inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
     "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    
+
 `;
 
 export const Content = styled.div`
@@ -30,16 +32,17 @@ export const Content = styled.div`
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: 80%;
   background-color: #fafafa;
   max-width: 600px;
-  border-radius: 5px;
+  border-radius: 15px;
+  margin-right: 60px;
   padding: 20px;
 `;
 
 export const ContainerHeader = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   position: relative;
   /* background: linear-gradient(
@@ -54,14 +57,17 @@ export const ContainerHeader = styled.div`
   background-position: center;
   width: 100%;
   height: 100%;
-  color: white;
   //border-radius: 30px 0 0 30px;
   float: right;
+
 `;
+
 export const TextContainer = styled.div`
   text-align: center;
   justify-content: center;
+
 `;
+
 export const Label = styled.label`
   font-size: 35px;
   margin-bottom: 30px;
@@ -89,8 +95,7 @@ export const labelError = styled.label`
 
 export const Strong = styled.strong`
   cursor: pointer;
-  display: flex;
-
+  float: right;
   a {
     text-decoration: none;
     color: #676767;
@@ -104,25 +109,25 @@ export const DivName = styled.div`
   gap: 30px;
 `;
 
-export const SignupButton = styled(LoadingButton)`
-  color: #ffffff !important;
-  width: 80%;
-  height: 40px;
-  transition: background-color 0.3s ease-in-out;
-  border-radius: 40px !important;
-  background-color: #306ec7 !important;
-  margin-top: 20px !important;
-  &:hover {
-    animation: fadeIn 0.4s ease-in;
-    background-color: #335c96 !important;
-  }
+// export const SignupButton = styled(LoadingButton)`
+//   color: #ffffff !important;
+//   width: 80%;
+//   height: 40px;
+//   transition: background-color 0.3s ease-in-out;
+//   border-radius: 40px !important;
+//   background-color: #306ec7 !important;
+//   margin-top: 20px !important;
+//   &:hover {
+//     animation: fadeIn 0.4s ease-in;
+//     background-color: #335c96 !important;
+//   }
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0.5;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-`;
+//   @keyframes fadeIn {
+//     from {
+//       opacity: 0.5;
+//     }
+//     to {
+//       opacity: 1;
+//     }
+//   }
+// `;

@@ -34,7 +34,7 @@ const Input = ({
             value={value}
             onChange={onChange}
             label={label}
-            variant="outlined"
+            variant="standard"
             helperText={errorMessage}
           />
         </Box>
@@ -49,8 +49,8 @@ const Input = ({
             value={value}
             onChange={onChange}
             label={label}
-            variant="outlined"
             helperText={errorMessage}
+            variant="standard"
             InputProps={{
               // <-- This is where the toggle button is added.
               endAdornment: (
@@ -65,7 +65,11 @@ const Input = ({
                 >
                   <IconButton
                     onClick={handleClickShowPassword}
-                    style={{ width: "40px", margin: "10px" }}
+                    style={{
+                      width: "40px",
+                      margin: "10px",
+                      marginBottom: "15px",
+                    }}
                   >
                     {showPassword ? <Visibility /> : <VisibilityOff />}
                   </IconButton>
