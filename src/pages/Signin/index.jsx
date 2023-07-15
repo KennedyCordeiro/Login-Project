@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import Myinput from "../../components/Input";
-import * as C from "./signin.styles";
 import { Link, useNavigate } from "react-router-dom";
+import Myinput from "../../components/Input";
 import useAuth from "../../hooks/useAuth";
-import DarkModeToggle from "../../components/DarkModeToggle/darkModeToggle";
-import Logo from "../../Images/logokk.png";
+import * as C from "./signin.styles";
 
+import DarkModeToggle from "../../components/DarkModeToggle/darkModeToggle";
 const Signin = () => {
   const { signin } = useAuth();
   const navigate = useNavigate();
@@ -37,8 +36,7 @@ const Signin = () => {
   return (
     <C.Container>
       <C.Content>
-
-        <C.Label>Login</C.Label>
+        <DarkModeToggle></DarkModeToggle> <C.Label>Login</C.Label>
         <C.DivInput>
           <Myinput
             type={true}
@@ -65,7 +63,6 @@ const Signin = () => {
           Entrar
         </C.SigninButton>
         <C.SignupButton onClick={handleButtonClick}>Cadastrar</C.SignupButton>
-
         <C.LabelSignup style={{ display: "flex", justifyContent: "ce" }}>
           <C.Strong>
             <Link to="/signup">&nbsp; Esqueceu sua senha?</Link>

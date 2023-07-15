@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import Input from "../../components/Input";
-import * as C from "./signup.styles";
 import { useNavigate } from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
-import DarkModeToggle from "../../components/DarkModeToggle/darkModeToggle";
-import Logo from "../../Images/logoKen.png";
 import TestButton from "../../components/Button";
+import Input from "../../components/Input";
+import useAuth from "../../hooks/useAuth";
+import * as C from "./signup.styles";
 
 const Signup = () => {
   const makeSignup = useAuth();
@@ -78,6 +76,10 @@ const Signup = () => {
     res && navigate("/home");
   };
 
+  const handleSignin = () => {
+    navigate("/signin");
+  };
+
   return (
     <C.Container>
       <C.ContainerHeader>
@@ -138,10 +140,13 @@ const Signup = () => {
               </ul>
             )}
           </C.labelError>
-          <TestButton Text={"Cadastrar"}></TestButton>
+          <TestButton onClick={handleSignup} Text={"Cadastrar"}></TestButton>
           <C.TextContainer>
-            Já possui conta?
-            <C.Strong>Login</C.Strong>
+            <C.Strong>Já possui conta?</C.Strong>
+            <div>
+              {" "}
+              <C.LoginButton onClick={handleSignin}>Login</C.LoginButton>
+            </div>
           </C.TextContainer>
         </C.Content>
       </C.ContainerHeader>

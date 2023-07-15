@@ -1,6 +1,6 @@
+import LoadingButton from "@mui/material/Button";
 import styled, { keyframes } from "styled-components";
 import backgroundHeader from "../../Images/back.jpg";
-import LoadingButton from "@mui/material/Button";
 
 const fadeIn = keyframes`
   from { 
@@ -18,10 +18,9 @@ export const Container = styled.div`
   flex-direction: initial;
   gap: 10px;
   height: 100vh;
+  //font-family: "Euclid Circular A";
   font-family: inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
     "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-    
-
 `;
 
 export const Content = styled.div`
@@ -59,13 +58,12 @@ export const ContainerHeader = styled.div`
   height: 100%;
   //border-radius: 30px 0 0 30px;
   float: right;
-
 `;
 
 export const TextContainer = styled.div`
   text-align: center;
   justify-content: center;
-
+  font-size: 15px;
 `;
 
 export const Label = styled.label`
@@ -88,14 +86,17 @@ export const LabelSignup = styled.div`
 `;
 
 export const labelError = styled.label`
-  font-size: 14px;
-  color: red;
+  font-size: 16px;
+  color: #df2222;
   margin-left: 35px;
+  font-family: "Euclid Circular A";
+  margin-bottom: 5px;
+  margin-top: 6px;
+  cursor: auto;
 `;
 
 export const Strong = styled.strong`
-  cursor: pointer;
-  float: right;
+  font-size: 15px;
   a {
     text-decoration: none;
     color: #676767;
@@ -109,25 +110,25 @@ export const DivName = styled.div`
   gap: 30px;
 `;
 
-// export const SignupButton = styled(LoadingButton)`
-//   color: #ffffff !important;
-//   width: 80%;
-//   height: 40px;
-//   transition: background-color 0.3s ease-in-out;
-//   border-radius: 40px !important;
-//   background-color: #306ec7 !important;
-//   margin-top: 20px !important;
-//   &:hover {
-//     animation: fadeIn 0.4s ease-in;
-//     background-color: #335c96 !important;
-//   }
+export const LoginButton = styled(LoadingButton)`
+  color: #ffffff !important;
+  width: 80%;
+  height: 40px;
+  transition: background-color 0.3s ease-in-out;
+  border-radius: 40px !important;
+  background-color: #306ec7 !important;
+  margin-top: 20px !important;
+  &:hover {
+    animation: fadeIn 0.4s ease-in;
+    background-color: #335c96 !important;
+  }
 
-//   @keyframes fadeIn {
-//     from {
-//       opacity: 0.5;
-//     }
-//     to {
-//       opacity: 1;
-//     }
-//   }
-// `;
+  @keyframes fadeIn {
+    from {
+      opacity: 0.5;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+`;
