@@ -18,6 +18,7 @@ const Input = ({
   onChange,
   error,
   errorMessage,
+  onlyNumber,
 }) => {
   const [showPassword, setShowPassword] = React.useState(false);
 
@@ -41,7 +42,7 @@ const Input = ({
       );
     } else {
       return (
-        <Box>
+        <Box className="text-input">
           <TextField
             id={error ? "outlined-error-helper-text" : "outlined-basic"}
             type={showPassword ? "text" : "password"}
@@ -67,8 +68,8 @@ const Input = ({
                     onClick={handleClickShowPassword}
                     style={{
                       width: "40px",
-                      margin: "10px",
-                      marginBottom: "15px",
+
+                      marginBottom: "10px",
                     }}
                   >
                     {showPassword ? <Visibility /> : <VisibilityOff />}
