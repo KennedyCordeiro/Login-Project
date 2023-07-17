@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import TestButton from "../../components/Button";
 import Input from "../../components/Input";
 import useAuth from "../../hooks/useAuth";
@@ -76,10 +76,6 @@ const Signup = () => {
     res && navigate("/home");
   };
 
-  const handleSignin = () => {
-    navigate("/signin");
-  };
-
   return (
     <C.Container>
       <C.ContainerHeader>
@@ -140,14 +136,13 @@ const Signup = () => {
               </ul>
             )}
           </C.labelError>
-          <TestButton onClick={handleSignup} Text={"Cadastrar"}></TestButton>
-          <C.TextContainer>
-            <C.Strong>Já possui conta?</C.Strong>
-            <div>
-              {" "}
-              <C.LoginButton onClick={handleSignin}>Login</C.LoginButton>
-            </div>
-          </C.TextContainer>
+          <TestButton onClick={handleSignup} text={"Vamos lá !"}></TestButton>
+          <C.LabelSignup>
+            <span>Já possui conta ?</span>
+            <C.Strong>
+              <Link to="/signin">&nbsp;Login</Link>
+            </C.Strong>
+          </C.LabelSignup>
         </C.Content>
       </C.ContainerHeader>
     </C.Container>

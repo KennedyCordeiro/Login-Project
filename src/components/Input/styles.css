@@ -1,11 +1,8 @@
 * {
-  width: 100%;
   margin-bottom: 20px;
 }
 
-
-.MuiInputBase-root{
-  
+.MuiInputBase-root {
   padding-right: 0 !important;
 }
 p {
@@ -14,4 +11,9 @@ p {
 
 .text-input {
   margin-bottom: 20px;
+  width: 100%;
+}
+
+.text-input * {
+  width: 100%;
 }

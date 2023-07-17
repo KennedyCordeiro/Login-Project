@@ -3,8 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import Myinput from "../../components/Input";
 import useAuth from "../../hooks/useAuth";
 import * as C from "./signin.styles";
+import TestButton from "../../components/Button";
+import Logo from "../../Images/logok.png";
 
-import DarkModeToggle from "../../components/DarkModeToggle/darkModeToggle";
 const Signin = () => {
   const { signin } = useAuth();
   const navigate = useNavigate();
@@ -29,47 +30,44 @@ const Signin = () => {
     navigate("/home");
   };
 
-  const handleButtonClick = () => {
-    navigate("/signup");
-  };
-
   return (
     <C.Container>
-      <C.Content>
-        <DarkModeToggle></DarkModeToggle> <C.Label>Login</C.Label>
-        <C.DivInput>
-          <Myinput
-            type={true}
-            error={error}
-            label={"Email"}
-            placeholder="Digite seu email"
-            value={email}
-            onChange={(e) => [setEmail(e.target.value), setError("")]}
-            errorMessage={errorMessage}
-          />
-          <Myinput
-            label={"Senha"}
-            type={false}
-            placeholder="Digite sua senha"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </C.DivInput>
-        <C.SigninButton
-          style={{ borderRadius: "10px 10px 10px 10px", width: "80%" }}
-          variant="contained"
-          onClick={handleLogin}
-        >
-          Entrar
-        </C.SigninButton>
-        <C.SignupButton onClick={handleButtonClick}>Cadastrar</C.SignupButton>
-        <C.LabelSignup style={{ display: "flex", justifyContent: "ce" }}>
-          <C.Strong>
-            <Link to="/signup">&nbsp; Esqueceu sua senha?</Link>
-          </C.Strong>
-        </C.LabelSignup>
-      </C.Content>
-      <C.ContainerHeader></C.ContainerHeader>
+      <C.ContainerHeader>
+        <C.Content>
+          <C.Label>Login</C.Label>
+          <C.DivInput>
+            <Myinput
+              type={true}
+              error={error}
+              label={"Email"}
+              placeholder="Digite seu email"
+              value={email}
+              onChange={(e) => [setEmail(e.target.value), setError("")]}
+              errorMessage={errorMessage}
+            />
+            <Myinput
+              label={"Senha"}
+              type={false}
+              placeholder="Digite sua senha"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </C.DivInput>
+          <TestButton text="Entrar" onClick={handleLogin}></TestButton>
+          <C.LabelSignup style={{ display: "flex" }}>
+            <span>Ainda não tem conta ?</span>
+            <C.Strong>
+              <Link to="/signup">&nbsp; Cadastre-se</Link>
+            </C.Strong>
+          </C.LabelSignup>
+          <C.LabelSignup>
+            <span>Esqueceu sua senha?</span>
+            <C.Strong>
+              <Link to="/forgotPassword">&nbsp; Recuperar senha</Link>
+            </C.Strong>
+          </C.LabelSignup>
+        </C.Content>
+      </C.ContainerHeader>
     </C.Container>
   );
 };

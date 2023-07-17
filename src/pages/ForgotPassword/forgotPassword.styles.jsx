@@ -35,13 +35,37 @@ export const Content = styled.div`
   background-color: #fafafa;
   max-width: 600px;
   border-radius: 15px;
-  margin-right: 60px;
+  margin-left: 60px;
   padding: 20px;
+`;
+
+export const LabelSignup = styled.div`
+  font-size: 16px;
+  color: #676767;
+  padding-top: 35px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+`;
+
+export const DivContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+`;
+
+export const SpanContent = styled.span`
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
 `;
 
 export const ContainerHeader = styled.div`
   display: flex;
-  justify-content: end;
+  justify-content: baseline;
   align-items: center;
   position: relative;
   /* background: linear-gradient(
@@ -68,21 +92,11 @@ export const TextContainer = styled.div`
 
 export const Label = styled.label`
   font-size: 35px;
-  margin-bottom: 30px;
   font-weight: 600;
   color: #676767;
   justify-content: center;
   align-items: baseline;
   display: flex;
-`;
-
-export const LabelSignup = styled.div`
-  font-size: 16px;
-  color: #676767;
-  padding-top: 35px;
-  align-items: center;
-  display: flex;
-  justify-content: center;
 `;
 
 export const labelError = styled.label`
@@ -107,7 +121,8 @@ export const DivName = styled.div`
   width: 100%;
   display: flex;
   justify-content: initial;
-  gap: 25px;
+  gap: 30px;
+  margin-bottom: 20px;
 `;
 
 export const LoginButton = styled(LoadingButton)`

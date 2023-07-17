@@ -30,10 +30,11 @@ export const Content = styled.div`
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: 100%;
-  background-color: #e9e9e9;
+  height: 80%;
+  background-color: #fafafa;
   max-width: 600px;
-  border-radius: 5px;
+  border-radius: 15px;
+  margin-left: 60px;
   padding: 20px;
 `;
 
@@ -71,7 +72,6 @@ export const ContainerHeader = styled.div`
   //border-radius: 30px 0 0 30px;
   float: right;
 `;
-
 
 export const Label = styled.label`
   font-size: 27px;
@@ -115,7 +115,7 @@ export const SignupButton = styled(LoadingButton)`
   background-color: #1d3557 !important;
 
   &:hover {
-    animation: fadeIn 0.4s ease-in ;
+    animation: fadeIn 0.4s ease-in;
     background-color: #335c96 !important;
   }
 
@@ -135,7 +135,7 @@ export const SigninButton = styled(LoadingButton)`
   width: 80%;
 
   &:hover {
-    animation: fadeIn 0.4s ease-in ;
+    animation: fadeIn 0.4s ease-in;
   }
 
   @keyframes fadeIn {
