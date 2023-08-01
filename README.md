@@ -24,11 +24,11 @@ O Login-Project é um projeto que visa fornecer uma solução completa para aute
 
 O projeto utiliza as seguintes tecnologias:
 
-- HTML5 e CSS3: Para criar a estrutura e o estilo do frontend, garantindo um layout bonito e responsivo.
+- HTML5, CSS3, React-JS, Typescript, Styled Components e Material UI: Para criar a estrutura e o estilo do frontend, garantindo um layout bonito e responsivo.
 
 - JavaScript: Responsável pela dinâmica dos inputs e implementação das validações de senhas e cadastros.
 
-- [Framework de UI]: O projeto utiliza um framework de UI para agilizar o desenvolvimento e garantir um design moderno.
+- [React-JS]: O projeto utiliza um framework de UI para agilizar o desenvolvimento e garantir um design moderno.
 
 ## Como Executar o Projeto
 

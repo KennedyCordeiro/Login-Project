@@ -97,6 +97,7 @@ export const labelError = styled.label`
 
 export const Strong = styled.strong`
   font-size: 15px;
+
   a {
     text-decoration: none;
     color: #676767;
