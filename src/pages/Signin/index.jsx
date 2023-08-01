@@ -14,12 +14,30 @@ const Signin = () => {
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleLogin = () => {
-    if (!email || !password) {
-      setErrorMessage("Preencha todos os campos");
+    const validateForm = () => {
+    setErrorMessage("");
+    const emailRegex = /^.+@.+\..+$/;
+    const isEmailValid = emailRegex.test(email);
+
+    if (!email) {
       setError(true);
+      setErrorMessage("Preencha todos os campos");
+      return true;
+    }
+
+    if (!isEmailValid) {
+      setError(true);
+      setErrorMessage("Formato de email incorreto");
+    }
+
+    return !isEmailValid || !email;
+  };
+
+  const handleLogin = () => {
+    if (validateForm()) {
       return;
     }
+
     const res = signin(email, password);
 
     if (res) {

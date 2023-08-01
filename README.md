@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Login-Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O Login-Project é um projeto que visa fornecer uma solução completa para autenticação de usuários com um layout bonito e responsivo. Ele inclui inputs dinâmicos e validações para senhas e cadastros, garantindo uma experiência de usuário agradável e segura.
 
-## Available Scripts
+## Funcionalidades
 
-In the project directory, you can run:
+- **Autenticação de Usuários**: O Login-Project permite que os usuários façam login de forma segura, protegendo suas contas com senhas.
 
-### `npm start`
+![Login Screen](./src/Images/Signin.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Cadastro de Usuários**: Novos usuários podem se cadastrar de forma rápida e fácil, fornecendo as informações necessárias.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Signup Screen](./src/Images/Signup.png)
 
-### `npm test`
+![ForgotPassword Screen](./src/Images/Forgot%20Password.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Inputs Dinâmicos**: Os campos de entrada são projetados para fornecer feedback e sugestões em tempo real para melhorar a usabilidade.
 
-### `npm run build`
+- **Validações de Senhas**: O sistema aplica regras de segurança para garantir que as senhas escolhidas pelos usuários sejam fortes e seguras.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Layout Responsivo e Bonito**: O design do projeto é responsivo e se adapta a diferentes dispositivos, proporcionando uma experiência consistente e agradável em telas de todos os tamanhos.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tecnologias Utilizadas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+O projeto utiliza as seguintes tecnologias:
 
-### `npm run eject`
+- HTML5 e CSS3: Para criar a estrutura e o estilo do frontend, garantindo um layout bonito e responsivo.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- JavaScript: Responsável pela dinâmica dos inputs e implementação das validações de senhas e cadastros.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [Framework de UI]: O projeto utiliza um framework de UI para agilizar o desenvolvimento e garantir um design moderno.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Como Executar o Projeto
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Para executar o Login-Project em sua máquina local, siga os passos abaixo:
 
-## Learn More
+1. Clone este repositório para o seu computador usando o seguinte comando:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+git clone https://github.com/KennedyCordeiro/Login-Project.git
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Navegue para o diretório do projeto:
 
-### Code Splitting
+cd Login-Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. Execute npm install para instalar suas dependências
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. Execute npm start para iniciar em sua tela inicial

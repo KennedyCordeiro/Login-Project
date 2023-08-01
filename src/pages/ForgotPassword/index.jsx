@@ -10,7 +10,7 @@ const ForgotPassword = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [sendCode, setSendCode] = useState(false);
-  const [errorMessage, setErrorMessage] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
   const { forgotPassword } = useAuth();
   const [error, setError] = useState(false);
   const [recoveryCode, setRecoveryCode] = useState("");
@@ -19,35 +19,64 @@ const ForgotPassword = () => {
     const updatedCode = recoveryCode.slice(0, index) + value;
     setRecoveryCode(updatedCode.slice(0, 6));
   };
+
+  const validateForm = () => {
+    setErrorMessage([]);
+    const emailRegex = /^.+@.+\..+$/;
+    const isEmailValid = emailRegex.test(email);
+
+    if (!isEmailValid) {
+      setError(true);
+      setErrorMessage("Formato de email incorreto");
+    }
+
+    return !isEmailValid;
+  };
+
+  const handleForgot = () => {
+    if (!email || validateForm()) return;
+
+    // const res = forgotPassword(email);
+    //res &&
+    setSendCode(true);
+  };
+
   return (
     <C.Container>
       <C.ContainerHeader>
         <C.Content>
-          <C.Label>Esqueceu sua senha?</C.Label>
-          <C.SpanContent>
-            Não se preocupe estamos aqui para ajudar
-          </C.SpanContent>
-          {sendCode && (
+          <C.DivLayout>
+            <C.Label>Esqueceu sua senha?</C.Label>
+            <C.SpanContent>
+              Não se preocupe estamos aqui para ajudar
+            </C.SpanContent>
+          </C.DivLayout>
+          {!sendCode && (
             <>
-              <Input
-                type={true}
-                error={error}
-                label={"Email"}
-                placeholder="Insira seu email cadastrado"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <Button text="Recuperar"></Button>
-              <C.LabelSignup>
+              <div style={{ width: "90%" }}>
+                <Input
+                  type={true}
+                  error={error}
+                  label={"Email"}
+                  placeholder="Insira seu email cadastrado"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  errorMessage={errorMessage}
+                />{" "}
+              </div>
+              <Button onClick={handleForgot} text="Recuperar"></Button>
+              <C.LabelForgot>
                 <span>Já possui conta ?</span>
                 <C.Strong>
                   <Link to="/signin">&nbsp;Login</Link>
                 </C.Strong>
-              </C.LabelSignup>
+              </C.LabelForgot>
             </>
           )}
-          {!sendCode && (
+          {sendCode && (
             <>
+              {" "}
+              <C.Strong>Digite o código enviado para seu email</C.Strong>
               <C.DivName>
                 <TextField
                   placeholder="0"
@@ -99,12 +128,12 @@ const ForgotPassword = () => {
                 />
               </C.DivName>
               <Button text="Validar"></Button>
-              <C.LabelSignup>
+              <C.LabelForgot>
                 <span>Já possui conta ?</span>
-                <C.Strong>
+                <C.Strong style={{ marginBottom: "0" }}>
                   <Link to="/signin">&nbsp;Login</Link>
                 </C.Strong>
-              </C.LabelSignup>
+              </C.LabelForgot>
             </>
           )}
         </C.Content>

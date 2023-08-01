@@ -28,11 +28,14 @@ const Signup = () => {
     if (!isPasswordValid) {
       setErrorMessage((prevErrors) => [
         ...prevErrors,
-        "A senha deve conter mais de 8 digitos",
+        "A senha deve conter letras maiusculas e números",
       ]);
+    }
+
+    if (password.length < 8) {
       setErrorMessage((prevErrors) => [
         ...prevErrors,
-        "A senha deve conter letras maiusculas e números",
+        "A senha deve conter mais de 8 digitos",
       ]);
     }
 

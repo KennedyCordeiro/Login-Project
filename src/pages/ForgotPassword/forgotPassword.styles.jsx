@@ -39,13 +39,14 @@ export const Content = styled.div`
   padding: 20px;
 `;
 
-export const LabelSignup = styled.div`
+export const LabelForgot = styled.div`
   font-size: 16px;
   color: #676767;
   padding-top: 35px;
   align-items: center;
   display: flex;
   justify-content: center;
+  position: relative;
 `;
 
 export const DivContainer = styled.div`
@@ -99,16 +100,6 @@ export const Label = styled.label`
   display: flex;
 `;
 
-export const labelError = styled.label`
-  font-size: 16px;
-  color: #df2222;
-  margin-left: 35px;
-  font-family: "Euclid Circular A";
-  margin-bottom: 5px;
-  margin-top: 6px;
-  cursor: auto;
-`;
-
 export const Strong = styled.strong`
   font-size: 15px;
   a {
@@ -123,6 +114,10 @@ export const DivName = styled.div`
   justify-content: initial;
   gap: 30px;
   margin-bottom: 20px;
+`;
+
+export const DivLayout = styled.div`
+  gap: 3px;
 `;
 
 export const LoginButton = styled(LoadingButton)`
